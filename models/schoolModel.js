@@ -14,6 +14,18 @@ const school= mongoose.Schema({
         type:String,
         required:[true,"Please add a valid index Number"]
     },
+    year:{
+        type: String,
+        required:true
+    },
+    grade:{
+        type: String,
+        required:true
+    },
+    school:{
+        type:String,
+        required:true
+    }
     
    
      
