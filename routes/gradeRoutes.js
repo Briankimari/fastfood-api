@@ -9,9 +9,9 @@ const router= express.Router();
 // assets routes
 router.get('/get-grade', getGrade);
 router.get('/get-grade/:id',getGradeById);
-router.post('/get-grade', saveGrade);
-router.patch('/get-grade/:id', updateGrade);
-router.delete('/get-grade/:id', deleteGrade);
+router.post('/save-grade', saveGrade);
+router.patch('/update-grade/:id', updateGrade);
+router.delete('/delete-grade/:id', deleteGrade);
 
 
 export default router;
