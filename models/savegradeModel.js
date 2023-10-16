@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 const grade= mongoose.Schema({
     grade:{
-        type: Number,
+        type: String,
         required:true
     },
       
