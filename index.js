@@ -11,6 +11,8 @@ import auth from './routes/authRoutes.js'
 import Post from './models/pictureModel.js'
 import errorHandler from "./middleware/errorMiddleware.js"
 import Order from "./routes/purchaseRouter.js"
+import student from './routes/schoolRoutes.js'
+import grade from './routes/gradeRoutes.js'
 
 const app =express();
 
@@ -33,7 +35,9 @@ app.use(cors());
 app.use('/token',TokenRoute);
 app.use(EditProfile);
 app.use(auth);
-app.use(Order)
+app.use(Order);
+app.use(student);
+app.use(grade)
 app.use(errorHandler);
 
 // setting the port 
