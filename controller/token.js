@@ -3,8 +3,8 @@ import axios from "axios";
 let token;
 
 export const createToken = async (req, res, next) => {
-   const secret="m00uyUkP1pVogE0A";
-    const consumer="ZddQ26xRtwnKATOeSFzstJkRUb7aLrJ1";
+   const secret="p6oYMi7dQAtCGKqC";
+    const consumer="Zhf15M1tESSM4mPfXxAjHBhQssz9qRM2";
   const auth = new Buffer.from(`${consumer}:${secret}`).toString("base64");
   await axios
     .get(
