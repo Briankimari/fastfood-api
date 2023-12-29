@@ -22,7 +22,7 @@ const postItem = mongoose.Schema ({
     }, 
     itemPrice:{
       type:Number,
-      maxLength:[100000, "Item is above 100K,Please contact the Admin "],
+      mixLength:[100, "Item is above 100K,Please contact the Admin "],
      
     },
     agree:{
