@@ -22,7 +22,7 @@ const postItem = mongoose.Schema ({
     }, 
     itemPrice:{
       type:String,
-      minLength:[100000, "Item is above 100K,Please contact the Admin "],
+      maxLength:[100000, "Item is above 100K,Please contact the Admin "],
      
     },
     agree:{
@@ -36,7 +36,7 @@ const postItem = mongoose.Schema ({
     image:{
         type:String,
         required:[true,"Please add an Image"],
-        maxLength:[1,"cannot post multiple images"]
+        minLength:[1,"cannot post multiple images"]
     }
 
 },{timestamps:true})
