@@ -13,6 +13,7 @@ import errorHandler from "./middleware/errorMiddleware.js"
 import Order from "./routes/purchaseRouter.js"
 import student from './routes/schoolRoutes.js'
 import grade from './routes/gradeRoutes.js'
+import postItem from './routes/purchase/postItemRouter.js'
 
 const app =express();
 
@@ -37,7 +38,8 @@ app.use(EditProfile);
 app.use(auth);
 app.use(Order);
 app.use(student);
-app.use(grade)
+app.use(grade);
+app.use(postItem);
 app.use(errorHandler);
 
 // setting the port 

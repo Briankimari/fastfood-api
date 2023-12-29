@@ -1,0 +1,15 @@
+import express from "express";
+import { deletePostItem, getItemPost, getItemPostById, savePostItem, updatePostItem } from "../../controller/purchase/postItem.js";
+
+// set router
+const router= express.Router();
+
+// assets routes
+router.get('/get-posts', getItemPost);
+router.get('/get-posts/:id',getItemPostById);
+router.post('/save-posts', savePostItem);
+router.patch('/update-post/:id', updatePostItem);
+router.delete('/delete-post/:id', deletePostItem);
+
+
+export default router;
