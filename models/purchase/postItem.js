@@ -9,7 +9,7 @@ const postItem = mongoose.Schema ({
 
       
       price:{
-        type: Number,
+        type: String,
         required:true,
         
     },
@@ -21,7 +21,7 @@ const postItem = mongoose.Schema ({
                
     }, 
     itemPrice:{
-      type:String,
+      type:Number,
       maxLength:[100000, "Item is above 100K,Please contact the Admin "],
      
     },
