@@ -22,7 +22,7 @@ const postItem = mongoose.Schema ({
     }, 
     itemPrice:{
       type:Number,
-      maxLength:[100, "enter valid amount "],
+      
      
     },
     agree:{
@@ -36,7 +36,7 @@ const postItem = mongoose.Schema ({
     image:{
         type:String,
         required:[true,"Please add an Image"],
-        minLength:[1,"cannot post multiple images"]
+        
     }
 
 },{timestamps:true})
