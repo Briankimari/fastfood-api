@@ -59,6 +59,23 @@ app.post('/insert', async(req,res) => {
     }
 });
 
+// Replace this placeholder with your actual admin credentials
+const adminUsername = 'admin';
+const adminPassword = 'adminpassword';
+
+app.post('/api/admin-verify-payment', (req, res) => {
+  const { username, password, paymentId, verificationResult,client,mCode } = req.body;
+
+  // Check admin credentials
+  if (username === adminUsername && password === adminPassword) {
+    // Perform payment verification logic (replace this with your actual logic)
+    // For simplicity, we'll just return a success response for any input
+    res.json({ success: true, message: 'Payment verified successfully.' });
+  } else {
+    res.status(401).json({ success: false, message: 'Unauthorized: Invalid admin credentials.' });
+  }
+});
+
 
 //get images
 app.get('/insert', async(req,res) => {
