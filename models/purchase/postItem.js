@@ -22,18 +22,20 @@ const postItem = mongoose.Schema ({
     }, 
     itemPrice:{
       type:Number,
+      required:[true,"PLease add itemPrice"]
       
      
     },
     agree:{
         type:String,
+        required:[true,"please fill this form"]
     
     },
     area:{
         type:String,
         required:[true,"Current location is required"]
     },
-    image:{
+    myImage:{
         type:String,
         required:[true,"Please add an Image"],
         

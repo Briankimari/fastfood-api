@@ -1,10 +1,17 @@
 import Profile from '../models/purchaseModel.js'
+import multer from 'multer'
+
+
+const storage = multer.memoryStorage();
+const upload = multer({storage: storage});
 
  
 // get assets
 export const getPurchase = async(req,res) => {
     try {
         const profile = await Profile.find();
+        const post = await Profile.find();
+        res.json(post)
         res.json(profile);
     } catch (error) {
       res.status(404).json({message: error.message})
@@ -23,10 +30,13 @@ export const getPurchaseById = async(req,res) => {
 }
 // save assets
 
-export const savePurchase = async(req,res) => {
+export const savePurchase = async(req,res) => { 
     const profile= new Profile(req.body);
+
     try {
         const insertedProfile = await profile.save();
+        const newImage = await Profile.create(body);
+        newImage.save();
         res.status(201).json(insertedProfile);
     } catch (error) {
         res.status(400).json({message: error.message});
@@ -48,6 +58,8 @@ export const updatePurchase = async(req,res) => {
 export const deletePurchase = async(req,res) => {
     try {
         const deletedProfile= await Profile.deleteOne({_id:req.params.id}, {$set: req.body});
+        const deleteImage = await Profile.deleteOne({_id:req.params.id}, {$set:req.body});
+        res.status(200).json(deleteImage);
     res.status(200).json(deletedProfile);
 }
      catch (error) {
