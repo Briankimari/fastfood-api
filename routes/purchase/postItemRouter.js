@@ -8,7 +8,7 @@ const router= express.Router();
 // assets routes
 router.get('/get-posts', getItemPost);
 router.get('/get-posts/:id',getItemPostById);
-router.post('/save-posts',savePurchaseWithUpload ,savePostItem);
+router.post('/save-posts' ,savePostItem);
 router.patch('/update-post/:id', updatePostItem);
 router.delete('/delete-post/:id', deletePostItem);
 
