@@ -1,8 +1,8 @@
-import Profile from '../models/purchaseModel.js'
+ import Profile from '../../models/paymentVintage/itemDetails.js'
 
  
 // get assets
-export const getPurchase = async(req,res) => {
+export const getDetails = async(req,res) => {
     try {
         const profile = await Profile.find();
         res.json(profile);
@@ -12,7 +12,7 @@ export const getPurchase = async(req,res) => {
     } 
 }
 // get asset by id
-export const getPurchaseById = async(req,res) => {
+export const getDetailsById = async(req,res) => {
     try {
         const profile= await Profile.findById(req.params.id);
     res.json(profile);
@@ -23,9 +23,12 @@ export const getPurchaseById = async(req,res) => {
 }
 // save assets
 
-export const savePurchase = async (req, res) => {
+
+export const saveDetails = async (req, res) => {
   try {
-    const profile = new Profile(req.body);
+    const itemId = req.params.id; 
+    const profile = new Profile({ ...req.body, itemId });
+
     const insertedProfile = await profile.save();
     res.status(201).json(insertedProfile);
   } catch (error) {
@@ -33,9 +36,9 @@ export const savePurchase = async (req, res) => {
   }
 };
 
-// update assets
+// update  
 
-export const updatePurchase = async (req, res) => {
+export const updateDetails = async (req, res) => {
   try {
     const updatedProfile = await Profile.findByIdAndUpdate(
       req.params.id,
@@ -50,7 +53,7 @@ export const updatePurchase = async (req, res) => {
 
 // delete assets
 
-export const deletePurchase = async(req,res) => {
+export const deleteDetails = async(req,res) => {
     try {
         const deletedProfile= await Profile.deleteOne({_id:req.params.id}, {$set: req.body});
     res.status(200).json(deletedProfile);
